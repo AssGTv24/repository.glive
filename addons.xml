@@ -1,75 +1,92 @@
- <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <addons>
 
-<addon id="repository.glive" name="[COLOR orangered]G-Live Repository[/COLOR]" version="1.2.0" provider-name="G-Man">
-<extension point="xbmc.addon.repository" name="G-Live Repository">
-    <dir>
-        <info compressed="false">https://raw.githubusercontent.com/mrgsi/repository.glive/master/addons.xml</info>   <checksum>https://raw.githubusercontent.com/mrgsi/repository.glive/master/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.githubusercontent.com/mrgsi/repository.glive/master/</datadir>
-    </dir>   
-    <dir>
-	    <info compressed="false">https://raw.githubusercontent.com/totaltec2014/ivue2/master/addons.xml</info>
-		<checksum>https://raw.githubusercontent.com/totaltec2014/ivue2/master/addons.xml.md5</checksum>
-		<datadir zip="true">https://raw.githubusercontent.com/totaltec2014/ivue2/master/</datadir>
-    </dir>
-</extension>
-<extension point="xbmc.addon.metadata">
-	<summary>A collection of Free-IPTV Add-ons</summary>
-    <description>These IPTV add-ons are free to use, but keep in mind Free IPTV services can be a bit unstable and break easily.</description>
-    <platform>all</platform>
-    <assets>
-        <icon>icon.png</icon>
-    </assets>
-</extension>
-</addon>
-    
-<addon id="plugin.video.megaiptv" name="[COLOR aqua]Mega IPTV[/COLOR]" version="1.3.0" provider-name="G-Man">
-	<requires>
-		<import addon="xbmc.python" version="3.0.0"/>
-		<import addon="script.module.requests"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="addon.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Live IPTV World-Wide</summary>
-		<description lang="en">An IPTV Multi Channel Add-on</description>
-		<platform>all</platform>
-		<language>en</language>
-		<license>GPL-2.0-or-later</license>
-		<source></source>
-		<news></news>
-		<assets>
-			<icon>icon.png</icon>
-		</assets>
-	</extension>
-</addon>
-    
-<addon id="plugin.video.tvone" name="tvOne" version="26+matrix.1" provider-name="RACC">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0"/>
-    <import addon="script.module.pycryptodome"/>
-    <import addon="script.module.requests"/>
-    <import addon="script.module.kodi-six"/>
-    <import addon="script.module.future"/>
-    <import addon="script.module.routing"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="addon.py">
-    <provides>video</provides>
-  </extension>
-    <extension point="xbmc.addon.metadata">
-    <reuselanguageinvoker>true</reuselanguageinvoker>
-    <summary lang="en_gb">tvOne</summary>
-    <description lang="en_gb">tvOne</description>
-    <disclaimer lang="en_gb"/>
-    <platform>all</platform>
-    <license>GPL-3.0</license>
-    <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-    </assets>    
-  </extension>
-</addon>
+    <addon name="[COLOR orangered]G-Live Repository[/COLOR]" id="repository.glive" provider-name="G-Man" version="1.2.0">
+        <extension name="G-Live Repository" point="xbmc.addon.repository">
+            <dir>
+                <info compressed="false">
+                    https://raw.githubusercontent.com/mrgsi/repository.glive/master/addons.xml
+                </info>
+                <checksum>
+                    https://raw.githubusercontent.com/mrgsi/repository.glive/master/addons.xml.md5
+                </checksum>
+                <datadir zip="true">
+                    https://raw.githubusercontent.com/mrgsi/repository.glive/master/
+                </datadir>
+            </dir>
+            <dir>
+                <info compressed="false">
+                    https://raw.githubusercontent.com/totaltec2014/ivue2/master/addons.xml
+                </info>
+                <checksum>
+                    https://raw.githubusercontent.com/totaltec2014/ivue2/master/addons.xml.md5
+                </checksum>
+                <datadir zip="true">https://raw.githubusercontent.com/totaltec2014/ivue2/master/
+                </datadir>
+            </dir>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <summary>A collection of Free-IPTV Add-ons</summary>
+            <description>These IPTV add-ons are free to use, but keep in mind Free IPTV services can
+                be a bit unstable and break easily.
+            </description>
+            <platform>all</platform>
+            <assets>
+                <icon>icon.png</icon>
+            </assets>
+        </extension>
+    </addon>
+
+
+    <addon name="[COLOR aqua]Mega IPTV[/COLOR]" id="plugin.video.megaiptv" provider-name="G-Man" version="1.3.0">
+        <requires>
+            <import addon="xbmc.python" version="3.0.0" />
+            <import addon="script.module.requests" />
+        </requires>
+        <extension library="addon.py" point="xbmc.python.plugin-source">
+            <provides>video</provides>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <summary lang="en">Live IPTV World-Wide</summary>
+            <description lang="en">An IPTV Multi Channel Add-on</description>
+            <platform>all</platform>
+            <language>en</language>
+            <license>GPL-2.0-or-later</license><![CDATA[
+            ]]>
+            <source /><![CDATA[
+            ]]>
+            <news />
+            <assets>
+                <icon>icon.png</icon>
+            </assets>
+        </extension>
+    </addon>
+
+    <addon name="tvOne" id="plugin.video.tvone" provider-name="RACC" version="26+matrix.1">
+        <requires>
+            <import addon="xbmc.python" version="3.0.0" />
+            <import addon="script.module.pycryptodome" />
+            <import addon="script.module.requests" />
+            <import addon="script.module.kodi-six" />
+            <import addon="script.module.future" />
+            <import addon="script.module.routing" />
+        </requires>
+        <extension library="addon.py" point="xbmc.python.plugin-source">
+            <provides>video</provides>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <reuselanguageinvoker>true</reuselanguageinvoker>
+            <summary lang="en_gb">tvOne</summary>
+            <description lang="en_gb">tvOne</description>
+            <disclaimer lang="en_gb" />
+            <platform>all</platform>
+            <license>GPL-3.0</license>
+            <assets>
+                <icon>icon.png</icon>
+                <fanart>fan-art.jpg</fanart>
+            </assets>
+        </extension>
+    </addon>
 
 <addon id="plugin.video.tvone11" name="tvOne11" version="27+matrix.1" provider-name="RACC">
   <requires>
@@ -274,28 +291,6 @@
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
-</addon>
-    
-<addon id="plugin.video.daddylivehd" name="DaddyLiveHD" version="1.0.0" provider-name="G-Man">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0"/>
-        <import addon="script.module.requests" />
-        <import addon="script.module.inputstreamhelper" />
-        <import addon="script.module.six"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="addon.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">Live channels and sports events</summary>
-        <description lang="en">Live Streamed Channels and Scheduled Sporting Events.</description>
-        <disclaimer lang="en">daddylivehd.com</disclaimer>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-        <assets>
-            <icon>icon.png</icon>
         </assets>
     </extension>
 </addon>
